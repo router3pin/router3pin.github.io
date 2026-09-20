@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动漫踩踏-热门二次元漫展资讯与票务指南</title>
+    <meta name="description" content="提供最新的动漫踩踏（漫展）资讯、展会时间表、场馆攻略、交通指南及热门展位推荐。涵盖ACG文化、cosplay活动及票务信息查询。">
+    <meta name="keywords" content="动漫踩踏,漫展资讯,二次元展会,动漫嘉年华,ACG活动,漫展攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fd79a8;
+            --dark: #2d3436;
+            --light: #dfe6e9;
+            --bg: #f9f9fc;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(108, 92, 231, 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--dark);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-btn {
+            background: var(--light);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 1px solid var(--light);
+            background: transparent;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* Grid Layout */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 5px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(108, 92, 231, 0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-date {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        .location {
+            font-size: 0.85rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .book-btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 6px 15px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        .guide-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .guide-item {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .guide-item:hover {
+            border-color: var(--primary);
+            background: #fdfdff;
+        }
+
+        .guide-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .guide-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .guide-text {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #666;
+            font-size: 0.95rem;
+            display: none;
+            border-top: 1px solid #f9f9f9;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: #b2bec3;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-group {
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>ACG</span> 漫展通
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">展会日历</a></li>
+                    <li><a href="#">周边推荐</a></li>
+                    <li><a href="#">Coser图鉴</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn">🔍 搜索展会</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>探索动漫踩踏的无限魅力</h1>
+            <p>汇聚全国热门二次元展会信息，为您提供最全的漫展攻略、票务查询与现场指南。</p>
+            <div class="hero-tags">
+                <span class="tag">#热门漫展</span>
+                <span class="tag">#Cosplay</span>
+                <span class="tag">#手办周边</span>
+                <span class="tag">#同人创作</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Filter Section -->
+        <section class="filter-bar">
+            <div class="filter-group">
+                <button class="filter-btn active">全部</button>
+                <button class="filter-btn">即将开始</button>
+                <button class="filter-btn">进行中</button>
+                <button class="filter-btn">已结束</button>
+            </div>
+            <div class="filter-group">
+                <button class="filter-btn">北京</button>
+                <button class="filter-btn">上海</button>
+                <button class="filter-btn">广州</button>
+                <button class="filter-btn">深圳</button>
+            </div>
+        </section>
+
+        <!-- Upcoming Events -->
+        <h2 class="section-title">近期热门动漫踩踏</h2>
+        <div class="card-grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-img">
+                    <img src="https://picsum.photos/seed/anime1/400/250" alt="动漫展会海报">
+                    <span class="card-badge">即将开始</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">2023年10月1日 - 10月3日</div>
+                    <h3 class="card-title">2023 全国动漫嘉年华（北京站）</h3>
+                    <p class="card-desc">年度最大的二次元狂欢节，汇聚顶级Coser、知名声优及海量正版手办，现场还有限定周边发售。</p>
+                    <div class="card-footer">
+                        <span class="location">📍 北京国家会议中心</span>
+                        <a href="#" class="book-btn">查看详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-img">
+                    <img src="https://picsum.photos/seed/anime2/400/250" alt="动漫展会海报">
+                    <span class="card-badge">即将开始</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">2023年10月15日 - 10月17日</div>
+                    <h3 class="card-title">星际幻想动漫展（上海站）</h3>
+                    <p class="card-desc">以科幻与二次元结合为主题，打造沉浸式观展体验，包含VR互动区与大型机甲展示。</p>
+                    <div class="card-footer">
+                        <span class="location">📍 上海世博展览馆</span>
+                        <a href="#" class="book-btn">查看详情</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-img">
+                    <img src="https://picsum.photos/seed/anime3/400/250" alt="动漫展会海报">
+                    <span class="card-badge">即将开始</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-date">2023年11月5日 - 11月6日</div>
+                    <h3 class="card-title">樱花祭同人展（广州站）</h3>
+                    <p class="card-desc">专注于同人创作与独立游戏展示，是二次元爱好者交流创作心得的最佳平台。</p>
+                    <div class="card-footer">
+                        <span class="location">📍 广州琶洲国际会展中心</span>
+                        <a href="#" class="book-btn">查看详情</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Guide Section -->
+        <h2 class="section-title">漫展出行指南</h2>
+        <section class="guide-section">
+            <div class="guide-list">
+                <div class="guide-item">
+                    <span class="guide-icon">🎫</span>
+                    <h4 class="guide-title">购票须知</h4>
+                    <p class="guide-text">提前在官方渠道购票，现场购票可能排队过久。请认准官方授权平台。</p>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-icon">🎒</span>
+                    <h4 class="guide-title">入馆携带</h4>
+                    <p class="guide-text">禁止携带打火机、管制刀具等违禁品。建议携带身份证件及少量现金。</p>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-icon">📷</span>
+                    <h4 class="guide-title">摄影礼仪</h4>
+                    <p class="guide-text">拍摄Coser时请先征得对方同意，避免使用闪光灯，尊重他人隐私。</p>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-icon">🚶</span>
+                    <h4 class="guide-title">人流疏导</h4>
+                    <p class="guide-text">热门展位易发生拥挤，请听从现场工作人员指引，注意脚下安全。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <h2 class="section-title">常见问题 (FAQ)</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">什么是动漫踩踏？</div>
+                <div class="faq-answer">“动漫踩踏”通常指代“动漫展会”的谐音或俗称，即ACGN（动画、漫画、游戏、小说）爱好者聚集举办的线下活动，包含Cosplay、周边交易、游戏试玩等内容。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">漫展门票一般在哪里买？</div>
+                <div class="faq-answer">通常可以通过展会官方微信公众号、官方网站、猫眼/大麦等票务平台进行购买。部分展会也支持现场扫码购票，但建议提前购买以免售罄。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">可以带食物和水进馆吗？</div>
+                <div class="faq-answer">大多数漫展禁止携带未经安检的食品和饮料进入场馆。建议在场馆内的餐饮区购买，或少量携带密封好的水，具体以展会公告为准。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何避免在人群中发生踩踏？</div>
+                <div class="faq-answer">在人流密集的时段（如开幕式、闭幕式），请紧贴墙壁或展台行走，不要逆流而上，若感到拥挤应立即停止前进并寻找安全区域。</div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">合作联系</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">北京漫展</a></li>
+                        <li><a href="#">上海漫展</a></li>
+                        <li><a href="#">广州漫展</a></li>
+                        <li><a href="#">深圳漫展</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">票务帮助</a></li>
+                        <li><a href="#">展会反馈</a></li>
+                        <li><a href="#">侵权申诉</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 ACG漫展通. 保留所有权利. 本站内容仅供信息参考.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Filter Button Logic (Visual Only)
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
