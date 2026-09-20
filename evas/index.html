@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evasion官网 - 专注于高效数据脱敏与隐私保护的合规解决方案</title>
+    <meta name="description" content="evasion官网提供专业的数据脱敏、隐私计算及企业级数据安全合规解决方案。了解如何在不泄露敏感信息的前提下安全共享数据，实现业务价值最大化。">
+    <meta name="keywords" content="evasion官网, 数据脱敏, 隐私保护, 数据安全, 企业合规, 数据治理">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #3b82f6;
+            --accent-hover: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 4rem 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-visual {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .code-line {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .code-keyword { color: #c084fc; }
+        .code-string { color: #86efac; }
+        .code-comment { color: #64748b; }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Solutions Section */
+        .solutions {
+            padding: 5rem 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-color);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #eff6ff;
+            color: var(--accent-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-link {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Feature Section */
+        .feature {
+            background-color: #f1f5f9;
+            padding: 5rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .check-icon {
+            min-width: 24px;
+            height: 24px;
+            background-color: #10b981;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+
+        .feature-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-content p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #1d4ed8 100%);
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn {
+            background-color: white;
+            color: var(--accent-color);
+        }
+
+        .cta .btn:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #94a3b8;
+            padding: 4rem 0 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h4 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col h5 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .header-actions {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                border-bottom: 1px solid var(--border-color);
+                padding: 1rem;
+                box-shadow: var(--shadow-md);
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 2L2 10L16 18L30 10L16 2Z" fill="#3b82f6"/>
+                    <path d="M2 22L16 30L30 22" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 16L16 24L30 16" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                evasion<span>官网</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#solutions" class="active">解决方案</a></li>
+                    <li><a href="#features">核心功能</a></li>
+                    <li><a href="#pricing">价格方案</a></li>
+                    <li><a href="#docs">技术文档</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">登录</a>
+                <a href="#" class="btn btn-primary">免费试用</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>让数据在流动中<br>安全无忧</h1>
+                    <p>evasion官网提供业界领先的数据脱敏与隐私保护平台。在不泄露敏感信息的前提下，安全共享数据，助力企业合规运营与业务创新。</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">立即开始</a>
+                        <a href="#" class="btn btn-outline">观看演示</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-block">
+                        <span class="code-line"><span class="code-comment">// 使用 evasion SDK 安全脱敏</span></span>
+                        <span class="code-line"><span class="code-keyword">const</span> evasion = <span class="code-keyword">require</span>(<span class="code-string">'@evasion/sdk'</span>);</span>
+                        <span class="code-line"></span>
+                        <span class="code-line"><span class="code-comment">// 输入敏感信息</span></span>
+                        <span class="code-line"><span class="code-keyword">const</span> original = <span class="code-string">"13800138000"</span>;</span>
+                        <span class="code-line"></span>
+                        <span class="code-line"><span class="code-comment">// 生成脱敏数据</span></span>
+                        <span class="code-line"><span class="code-keyword">const</span> masked = evasion.mask(original, {</span>
+                        <span class="code-line">  type: <span class="code-string">'phone'</span>,</span>
+                        <span class="code-line">  format: <span class="code-string">'138****8000'</span></span>
+                        <span class="code-line">});</span>
+                        <span class="code-line"></span>
+                        <span class="code-line"><span class="code-keyword">console</span>.log(masked); <span class="code-comment">// 输出: 138****8000</span></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>99.9%</h3>
+                    <p>数据脱敏准确率</p>
+                </div>
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>企业客户信赖</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10亿+</h3>
+                    <p>日均处理记录</p>
+                </div>
+                <div class="stat-item">
+                    <h3>0</h3>
+                    <p>数据泄露事件</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section id="solutions" class="solutions">
+            <div class="container">
+                <h2 class="section-title">全方位数据安全解决方案</h2>
+                <p class="section-subtitle">无论是金融、医疗还是电商行业，evasion都能提供定制化的数据治理策略，满足最严格的安全合规要求。</p>
+                
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h3>数据脱敏引擎</h3>
+                        <p>支持静态脱敏与动态脱敏，对身份证、手机号、邮箱等敏感字段进行实时转换，确保数据在开发、测试及对外共享环节的安全性。</p>
+                        <a href="#" class="card-link">了解更多 &rarr;</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3>隐私计算平台</h3>
+                        <p>基于多方安全计算（MPC）和联邦学习技术，实现“数据可用不可见”。在保护原始数据隐私的前提下，完成联合建模与数据分析任务。</p>
+                        <a href="#" class="card-link">了解更多 &rarr;</a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        </div>
+                        <h3>合规审计系统</h3>
+                        <p>内置GDPR、个人信息保护法等合规检查规则，自动生成数据流转报告与脱敏日志，帮助企业轻松应对监管审计与合规检查。</p>
+                        <a href="#" class="card-link">了解更多 &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Section -->
+        <section id="features" class="feature">
+            <div class="container feature-grid">
+                <div class="feature-content">
+                    <h3>为什么选择 evasion？</h3>
+                    <p>在数字化转型的浪潮中，数据安全已成为企业的生命线。evasion官网致力于通过技术创新，降低企业数据治理的门槛与成本。</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>高并发低延迟</h4>
+                                <p style="margin-bottom:0; color:var(--text-secondary)">采用分布式架构，支持每秒百万级脱敏请求，不影响业务系统性能。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>灵活的规则引擎</h4>
+                                <p style="margin-bottom:0; color:var(--text-secondary)">可视化配置脱敏规则，无需编写代码即可适配复杂的业务场景需求。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <h4>全链路追踪</h4>
+                                <p style="margin-bottom:0; color:var(--text-secondary)">提供详细的数据操作审计日志，确保每一次数据访问都可追溯、可审计。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-visual">
+                    <img src="https://picsum.photos/seed/securitytech/600/400.jpg" alt="evasion 数据安全架构示意图" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>准备好保护您的数据了吗？</h2>
+                <p>加入数百家领先企业的行列，使用 evasion 官网平台构建坚不可摧的数据安全防线。现在注册即可获得 14 天免费专业版试用。</p>
+                <a href="#" class="btn">免费注册试用</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>evasion官网</h4>
+                    <p>专注于为企业提供安全、高效、合规的数据脱敏与隐私计算解决方案。</p>
+                    <div style="display:flex; gap:1rem;">
+                        <a href="#">微信</a>
+                        <a href="#">微博</a>
+                        <a href="#">知乎</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>产品</h5>
+                    <ul>
+                        <li><a href="#">数据脱敏</a></li>
+                        <li><a href="#">隐私计算</a></li>
+                        <li><a href="#">数据审计</a></li>
+                        <li><a href="#">API 文档</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>支持</h5>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">服务状态</a></li>
+                        <li><a href="#">社区论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>公司</h5>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 evasion Data Security Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple interaction for buttons (console log)
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if(btn.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    console.log('Action triggered for:', btn.textContent);
+                }
+            });
+        });
+    </script>
+</body>
+  </html>
