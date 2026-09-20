@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒险岛双刀加点-双刀职业深度解析与全流派加点方案指南</title>
+    <meta name="description" content="本站提供冒险岛双刀职业最全面的加点攻略，包含红双刀与黑双刀的技能树配置、属性点分配建议、装备搭配技巧以及实战输出手法详解。">
+    <meta name="keywords" content="冒险岛双刀加点,冒险岛双刀攻略,冒险岛红双刀加点,冒险岛黑双刀加点,冒险岛红双刀加点,冒险岛黑双刀加点">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #fbc02d;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            padding-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        /* Feature Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Guide Content */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        .sidebar {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 15px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 10px;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .sidebar ul li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 5px 0;
+            font-weight: 500;
+        }
+
+        .sidebar a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+            transition: all 0.2s;
+        }
+
+        .content-area {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .guide-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .guide-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .guide-section p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background-color: #fff8e1;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .highlight-box strong {
+            color: #f57f17;
+        }
+
+        /* Skill Tree Table */
+        .skill-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        .skill-table th, .skill-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .skill-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .skill-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Utility */
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .tag.red { background-color: #ffcdd2; color: #c62828; }
+        .tag.black { background-color: #cfd8dc; color: #455a64; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                冒险岛<span>攻略库</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">双刀攻略</a></li>
+                    <li><a href="#">职业对比</a></li>
+                    <li><a href="#">装备推荐</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>冒险岛双刀加点指南</h1>
+            <p>从入门到精通，红双刀与黑双刀的属性点分配、技能树构建与实战输出最大化方案</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- 核心概念与特性 -->
+        <section>
+            <h2 class="section-title">双刀职业核心特性</h2>
+            <div class="features">
+                <article class="feature-card">
+                    <h3>极高的爆发输出</h3>
+                    <p>双刀（双斧/双刀）拥有全游戏最高的单体爆发伤害之一，技能特效华丽，适合追求极致伤害的玩家。</p>
+                </article>
+                <article class="feature-card">
+                    <h3>物理攻击为主</h3>
+                    <p>职业定位为物理攻击型，主要依赖力量属性（STR）提升攻击力，配合物理攻击力（%P.ATK）装备堆叠。</p>
+                </article>
+                <article class="feature-card">
+                    <h3>双持武器机制</h3>
+                    <p>双手持斧/刀，攻击速度极快，拥有独特的攻击特效，但防御力相对较低，需注意生存环境。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 详细攻略布局 -->
+        <div class="guide-layout">
+            <!-- 侧边栏导航 -->
+            <aside class="sidebar">
+                <h3>攻略目录</h3>
+                <ul>
+                    <li><a href="#base-str">基础属性分配</a></li>
+                    <li><a href="#red-dagger">红双刀加点方案</a></li>
+                    <li><a href="#black-dagger">黑双刀加点方案</a></li>
+                    <li><a href="#skill-build">技能树详解</a></li>
+                    <li><a href="#common-questions">常见问题</a></li>
+                </ul>
+            </aside>
+
+            <!-- 主内容区 -->
+            <div class="content-area">
+                
+                <!-- 基础属性部分 -->
+                <div id="base-str" class="guide-section">
+                    <h2>基础属性分配原则</h2>
+                    <p>双刀作为物理输出职业，属性点的选择直接决定了技能倍率的上限。以下是标准的属性分配建议：</p>
+                    <div class="highlight-box">
+                        <strong>核心原则：</strong> 力量 (STR) 是提升双刀攻击力最直接的因素。建议在达到满级（200级）时，将力量属性点加满。
+                    </div>
+                    <p>对于装备强化带来的属性溢出，通常建议保留少量力量（如1-5点），以确保装备属性不会浪费在非主属性上。智力、幸运等属性对双刀的输出贡献微乎其微，因此不建议投入。</p>
+                </div>
+
+                <!-- 红双刀方案 -->
+                <div id="red-dagger" class="guide-section">
+                    <h2>红双刀加点方案</h2>
+                    <p>红双刀（双斧）以高倍率的物理技能著称，适合在BOSS战和单体爆发场景中发挥最大作用。</p>
+                    <h3>技能优先级</h3>
+                    <ul>
+                        <li><strong>主动技能：</strong> 必须点满的核心爆发技能，如[双斧乱舞]、[突进斧]等。</li>
+                        <li><strong>被动技能：</strong> 提升攻击力、暴击率或攻击速度的被动技能优先级最高。</li>
+                        <li><strong>辅助技能：</strong> 根据个人游戏风格，可适当分配少量点到[生命恢复]或[移动速度]上。</li>
+                    </ul>
+                    <p>红双刀的加点策略侧重于最大化单次攻击伤害，因此在技能升级时，应优先保证高倍率技能的等级。</p>
+                </div>
+
+                <!-- 黑双刀方案 -->
+                <div id="black-dagger" class="guide-section">
+                    <h2>黑双刀加点方案</h2>
+                    <p>黑双刀（双刀）相比红双刀，在技能特效和攻击形态上有所调整，更注重持续的连击能力。</p>
+                    <h3>技能优先级</h3>
+                    <ul>
+                        <li><strong>核心技能：</strong> [旋风斩]、[终结]等技能是黑双刀的主要输出手段。</li>
+                        <li><strong>属性平衡：</strong> 黑双刀通常拥有更好的生存能力或辅助效果，建议在保证核心输出技能满级的前提下，适当提升生存类被动技能的等级。</li>
+                    </ul>
+                    <p>黑双刀的加点更强调技能循环的流畅性，建议保留部分SP用于提升技能冷却缩减或攻击速度。</p>
+                </div>
+
+                <!-- 技能树详解 -->
+                <div id="skill-build" class="guide-section">
+                    <h2>技能树构建建议</h2>
+                    <p>双刀的技能树较为庞大，合理分配SP是关键。以下是通用的技能树构建思路：</p>
+                    <table class="skill-table">
+                        <thead>
+                            <tr>
+                                <th>技能名称</th>
+                                <th>推荐等级</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>双斧乱舞</td>
+                                <td>20/30/30</td>
+                                <td>红双刀核心爆发，越高伤害越高</td>
+                            </tr>
+                            <tr>
+                                <td>旋风斩</td>
+                                <td>20/30/30</td>
+                                <td>黑双刀主要AOE技能</td>
+                            </tr>
+                            <tr>
+                                <td>突进斧</td>
+                                <td>20/30/30</td>
+                                <td>位移兼控制技能</td>
+                            </tr>
+                            <tr>
+                                <td>终结</td>
+                                <td>20/30/30</td>
+                                <td>高伤害单体攻击</td>
+                            </tr>
+                            <tr>
+                                <td>物理攻击力强化</td>
+                                <td>满级</td>
+                                <td>提升基础攻击力</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 常见问题 -->
+                <div id="common-questions" class="guide-section">
+                    <h2>常见问题解答 (FAQ)</h2>
+                    <h3>Q1: 双刀应该加敏捷还是力量？</h3>
+                    <p>A: 双刀是物理攻击职业，力量（STR）是主属性。敏捷（DEX）主要用于命中和闪避，一般依靠装备提供即可，不建议手动加满。</p>
+                    
+                    <h3>Q2: 红双刀和黑双刀哪个输出更高？</h3>
+                    <p>A: 在同等装备和加点水平下，红双刀的爆发伤害通常略高于黑双刀，但黑双刀的技能形态更为灵活，适合不同的战斗节奏。</p>
+
+                    <h3>Q3: 技能点不够怎么办？</h3>
+                    <p>A: 双刀技能较多，建议优先点满核心输出技能。辅助技能（如Buff类）可以视SP剩余情况酌情升级。</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 冒险岛攻略库 - 专注提供最实用的游戏攻略与数据查询。</p>
+            <p>本站内容仅供玩家参考，游戏版权归 Nexon 所有。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
