@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="美足足交 - 探索足部美学的极致体验与相关艺术欣赏指南。">
+    <meta name="keywords" content="美足足交, 足部艺术, 足控, 足部欣赏, 足部美学">
+    <title>美足足交-足部艺术与美学欣赏指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a373;
+            --secondary-color: #faedcd;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-color: #fdfbf7;
+            --white: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #fff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #c08d5b;
+            transform: translateY(-2px);
+        }
+
+        /* Categories */
+        .categories {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 32px;
+            font-size: 1.8rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .category-img {
+            height: 160px;
+            width: 100%;
+            background-color: #eee;
+        }
+
+        .category-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .category-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Featured Section */
+        .featured {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        .main-feature {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 450px;
+        }
+
+        .main-feature img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .main-feature:hover img {
+            transform: scale(1.05);
+        }
+
+        .feature-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 40px 24px 24px;
+            color: var(--white);
+        }
+
+        .feature-overlay h2 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .side-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .side-item {
+            display: flex;
+            gap: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .side-item:last-child {
+            border-bottom: none;
+        }
+
+        .side-thumb {
+            width: 100px;
+            height: 70px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .side-content h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .side-content span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Guide Section */
+        .guide {
+            padding: 60px 0;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .guide-card {
+            background: var(--bg-color);
+            padding: 32px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .guide-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .guide-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .guide-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 10px;
+            }
+            
+            nav {
+                display: none; /* Simplify for mobile demo */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <span>★</span> 美足足交
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">分类浏览</a></li>
+                    <li><a href="#">高清图集</a></li>
+                    <li><a href="#">艺术鉴赏</a></li>
+                    <li><a href="#">社区交流</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索足部艺术的极致美学</h1>
+                <p>汇聚全球精选的足部美学内容，为您提供专业的鉴赏指南与分类浏览体验。</p>
+                <a href="#" class="cta-button">开始探索</a>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories container">
+            <h2 class="section-title">热门分类</h2>
+            <div class="category-grid">
+                <article class="category-card">
+                    <img src="https://picsum.photos/seed/foot1/400/250" alt="足部特写艺术" class="category-img">
+                    <div class="category-info">
+                        <h3>高清特写</h3>
+                        <p>细腻的纹理与光影捕捉</p>
+                    </div>
+                </article>
+                <article class="category-card">
+                    <img src="https://picsum.photos/seed/foot2/400/250" alt="足部穿搭指南" class="category-img">
+                    <div class="category-info">
+                        <h3>时尚穿搭</h3>
+                        <p>鞋子与足部的完美搭配</p>
+                    </div>
+                </article>
+                <article class="category-card">
+                    <img src="https://picsum.photos/seed/foot3/400/250" alt="足部护理知识" class="category-img">
+                    <div class="category-info">
+                        <h3>养护知识</h3>
+                        <p>保持足部健康的科学方法</p>
+                    </div>
+                </article>
+                <article class="category-card">
+                    <img src="https://picsum.photos/seed/foot4/400/250" alt="足部文化" class="category-img">
+                    <div class="category-info">
+                        <h3>文化赏析</h3>
+                        <p>不同文化下的足部审美</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="featured">
+            <div class="container">
+                <h2 class="section-title">精选推荐</h2>
+                <div class="featured-grid">
+                    <div class="main-feature">
+                        <img src="https://picsum.photos/seed/mainfeat/800/500" alt="足部艺术精选">
+                        <div class="feature-overlay">
+                            <h2>足部线条与光影的极致融合</h2>
+                            <p>探索摄影大师如何通过镜头语言展现足部的独特魅力。</p>
+                        </div>
+                    </div>
+                    <div class="side-list">
+                        <article class="side-item">
+                            <img src="https://picsum.photos/seed/side1/150/100" alt="图集预览" class="side-thumb">
+                            <div class="side-content">
+                                <h4>夏季凉鞋搭配指南</h4>
+                                <span>时尚 · 12张图片</span>
+                            </div>
+                        </article>
+                        <article class="side-item">
+                            <img src="https://picsum.photos/seed/side2/150/100" alt="图集预览" class="side-thumb">
+                            <div class="side-content">
+                                <h4>足部瑜伽动作解析</h4>
+                                <span>健康 · 8张图片</span>
+                            </div>
+                        </article>
+                        <article class="side-item">
+                            <img src="https://picsum.photos/seed/side3/150/100" alt="图集预览" class="side-thumb">
+                            <div class="side-content">
+                                <h4>经典鞋履赏析</h4>
+                                <span>设计 · 15张图片</span>
+                            </div>
+                        </article>
+                        <article class="side-item">
+                            <img src="https://picsum.photos/seed/side4/150/100" alt="图集预览" class="side-thumb">
+                            <div class="side-content">
+                                <h4>足部按摩放松技巧</h4>
+                                <span>生活 · 6张图片</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section class="guide container">
+            <h2 class="section-title">鉴赏指南</h2>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <div class="guide-icon">🎨</div>
+                    <h3>色彩搭配</h3>
+                    <p>了解不同肤色与足部色调的和谐搭配，以及鞋履颜色的选择建议。</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">✨</div>
+                    <h3>光影运用</h3>
+                    <p>学习如何利用自然光和摄影布光，突出足部的立体感和质感。</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">📐</div>
+                    <h3>构图技巧</h3>
+                    <p>掌握从俯视、平视到特写等不同视角的构图方法，提升画面美感。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于美足足交</h4>
+                    <p>致力于分享足部美学与时尚资讯，为您提供最优质的浏览体验。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">最新更新</a></li>
+                        <li><a href="#">热门榜单</a></li>
+                        <li><a href="#">分类索引</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 美足足交艺术网 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
